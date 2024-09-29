@@ -1,0 +1,206 @@
+[
+  {
+    "id": "electronic",
+    "title": "Electronic",
+    "description": "Learn about electronics and robotics",
+    "mainTopics": [
+      {
+        "id": "direct-current",
+        "title": "Corriente Directa",
+        "content": [
+          {
+            "id": "basic-concepts",
+            "title": "Conceptos básicos",
+            "summary": "Electric charge is a fundamental property of matter that causes it to experience a force when near other electrically charged matter.",
+            "resources": [
+              {
+                "type": "article",
+                "url": "https://example.com/dc-basics",
+                "title": "Fundamentos de la Corriente Directa"
+              },
+              {
+                "type": "video",
+                "url": "https://youtube.com/watch?v=dc-basics",
+                "title": "Explicación visual de la CD"
+              }
+            ]
+          },
+          {
+            "id": "static-electricity",
+            "title": "Electricidad estática",
+            "summary": "Es la acumulación de cargas eléctricas en la superficie de un material. Ocurre cuando ciertos materiales se frotan entre sí, generando un desequilibrio de electrones que crea una carga. Esta forma de electricidad no implica movimiento continuo de las cargas, como en los circuitos eléctricos.",
+            "resources": [
+              {
+                "type": "interactive",
+                "url": "https://example.com/static-electricity-sim",
+                "title": "Simulador de Electricidad Estática"
+              },
+              {
+                "type": "quiz",
+                "url": "https://example.com/static-quiz",
+                "title": "Prueba tus conocimientos sobre electricidad estática"
+              }
+            ]
+          },
+          {
+            "id": "static-electricity",
+            "title": "Flujo de electrones",
+            "summary": "Esta guía de estudio explora el concepto de electricidad estática, incluyendo su descubrimiento, la naturaleza de las cargas eléctricas y la composición del átomo.",
+            "resources": [
+              {
+                "type": "interactive",
+                "url": "https://example.com/static-electricity-sim",
+                "title": "Simulador de Electricidad Estática"
+              },
+              {
+                "type": "quiz",
+                "url": "https://example.com/static-quiz",
+                "title": "Prueba tus conocimientos sobre electricidad estática"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "second-current",
+        "title": "Corriente Directa",
+        "content": [
+          {
+            "id": "static-electricity",
+            "title": "Circuitos eléctricos",
+            "summary": "Un circuito es un camino cerrado por el cual fluye la corriente eléctrica. Está compuesto por elementos como fuentes de energía (baterías), resistencias, interruptores y conductores. Los circuitos pueden ser serie (un solo camino para la corriente) o paralelo (múltiples caminos).",
+            "resources": [
+              {
+                "type": "interactive",
+                "url": "https://example.com/static-electricity-sim",
+                "title": "Simulador de Electricidad Estática"
+              },
+              {
+                "type": "quiz",
+                "url": "https://example.com/static-quiz",
+                "title": "Prueba tus conocimientos sobre electricidad estática"
+              }
+            ]
+          },
+          {
+            "id": "static-electricity",
+            "title": "Magnitudes fundamentales",
+            "summary": "En electricidad, las principales magnitudes son: Voltaje (V): La fuerza que impulsa a los electrones a moverse a través de un conductor. Corriente (I): La cantidad de electrones que fluye por un circuito, medida en amperios. Resistencia (R): La oposición al flujo de corriente en un material, medida en ohmios.",
+            "resources": [
+              {
+                "type": "interactive",
+                "url": "https://example.com/static-electricity-sim",
+                "title": "Simulador de Electricidad Estática"
+              },
+              {
+                "type": "quiz",
+                "url": "https://example.com/static-quiz",
+                "title": "Prueba tus conocimientos sobre electricidad estática"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué es la corriente directa?",
+        "answer": "La corriente directa (CD) es un flujo constante y unidireccional de carga eléctrica. Es el tipo de electricidad que fluye en una dirección constante, como la que proporcionan las baterías."
+      },
+      {
+        "question": "¿Cómo se genera la electricidad estática?",
+        "answer": "La electricidad estática se genera cuando dos materiales se frotan entre sí, causando que los electrones se transfieran de un material a otro, creando un desequilibrio de cargas."
+      },
+      {
+        "question": "¿Qué es el flujo de electrones?",
+        "answer": "El flujo de electrones es el movimiento de electrones a través de un conductor, como un cable. Este movimiento de cargas eléctricas es lo que conocemos como corriente eléctrica."
+      },
+      {
+        "question": "¿Cuál es la diferencia entre un circuito en serie y uno en paralelo?",
+        "answer": "En un circuito en serie, los componentes están conectados uno tras otro en un solo camino para la corriente. En un circuito en paralelo, los componentes están conectados en múltiples caminos, permitiendo que la corriente fluya por varias rutas."
+      },
+      {
+        "question": "¿Cuáles son las unidades de medida para el voltaje, la corriente y la resistencia?",
+        "answer": "El voltaje se mide en voltios (V), la corriente en amperios (A), y la resistencia en ohmios (Ω)."
+      }
+    ]
+  },
+  {
+    "id": "design",
+    "title": "Design",
+    "description": "Explore the world of design",
+    "mainTopics": [
+      {
+        "id": "direct-current",
+        "title": "Diseño Gráfico",
+        "content": [
+          {
+            "id": "color-theory",
+            "title": "",
+            "summary": "La teoría del color es el estudio de cómo los colores interactúan y cómo afectan la percepción humana. Este módulo explora los fundamentos de la rueda de colores, esquemas de color y psicología del color.",
+            "resources": [
+              {
+                "type": "article",
+                "url": "https://example.com/color-theory",
+                "title": "Introducción a la Teoría del Color"
+              },
+              {
+                "type": "video",
+                "url": "https://youtube.com/watch?v=color-wheel",
+                "title": "La Rueda de Colores Explicada"
+              }
+            ]
+          },
+          {
+            "id": "user-research",
+            "title": "Investigación de Usuarios",
+            "summary": "La investigación de usuarios es crucial para crear productos centrados en el usuario. Este módulo cubre técnicas de entrevista, creación de personas y mapeo de viajes del usuario.",
+            "resources": [
+              {
+                "type": "article",
+                "url": "https://example.com/user-research-101",
+                "title": "Fundamentos de la Investigación de Usuarios"
+              },
+              {
+                "type": "video",
+                "url": "https://youtube.com/watch?v=user-interviews",
+                "title": "Cómo Conducir Entrevistas de Usuario Efectivas"
+              }
+            ]
+          },
+          {
+            "id": "user-research",
+            "title": "Investigación de Usuarios",
+            "summary": "La investigación de usuarios es crucial para crear productos centrados en el usuario. Este módulo cubre técnicas de entrevista, creación de personas y mapeo de viajes del usuario.",
+            "resources": [
+              {
+                "type": "article",
+                "url": "https://example.com/user-research-101",
+                "title": "Fundamentos de la Investigación de Usuarios"
+              },
+              {
+                "type": "video",
+                "url": "https://youtube.com/watch?v=user-interviews",
+                "title": "Cómo Conducir Entrevistas de Usuario Efectivas"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué es la psicología del color?",
+        "answer": "La psicología del color es el estudio de cómo los colores afectan las percepciones y comportamientos humanos. Por ejemplo, el rojo puede evocar emociones fuertes, mientras que el azul puede ser calmante."
+      },
+      {
+        "question": "¿Por qué es importante la investigación de usuarios en el diseño?",
+        "answer": "La investigación de usuarios es fundamental porque permite a los diseñadores entender las necesidades, comportamientos y preferencias de los usuarios finales. Esto conduce a diseños más efectivos y centrados en el usuario."
+      },
+      {
+        "question": "¿Qué es un 'user persona' en diseño?",
+        "answer": "Un 'user persona' es una representación ficticia pero realista de un usuario típico del producto o servicio que se está diseñando. Se basa en la investigación de usuarios y ayuda a los diseñadores a entender mejor a quién están diseñando."
+      }
+    ]
+  }
+]

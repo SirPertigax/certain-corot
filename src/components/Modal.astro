@@ -1,0 +1,96 @@
+---
+---
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-summary"></p>
+      <h3>Recursos externos:</h3>
+      <ul id="modal-resources"></ul>
+    </div>
+  </div>
+  
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  
+  <script>
+    const modal = document.getElementById('modal');
+    const closeBtn = modal?.querySelector('.close') as HTMLElement | null;
+    const boxes = document.querySelectorAll('.roadmap-box');
+  
+    boxes.forEach(box => {
+      box.addEventListener('click', () => {
+        const title = box.getAttribute('data-title');
+        const summary = box.getAttribute('data-summary');
+        const resources = JSON.parse(box.getAttribute('data-resources') || '[]');
+  
+        if (modal) {
+          const modalTitle = modal.querySelector('#modal-title');
+          const modalSummary = modal.querySelector('#modal-summary');
+          const resourcesList = modal.querySelector('#modal-resources');
+  
+          if (modalTitle) modalTitle.textContent = title || '';
+          if (modalSummary) modalSummary.textContent = summary || '';
+  
+          if (resourcesList) {
+            resourcesList.innerHTML = '';
+            resources.forEach((resource: { url: string; title: string }) => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.href = resource.url;
+              a.textContent = resource.title;
+              a.target = '_blank';
+              li.appendChild(a);
+              resourcesList.appendChild(li);
+            });
+          }
+  
+          modal.style.display = 'block';
+        }
+      });
+    });
+  
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        if (modal) modal.style.display = 'none';
+      });
+    }
+  
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>

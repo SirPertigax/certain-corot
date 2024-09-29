@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RoadmapBox from '../components/RoadmapBox.astro';
+import RoadmapLink from '../components/RoadmapLink.astro';
+
+const allRoadmaps = [
+  { id: 'electronic', title: 'Electronic', summary: 'Learn about electronics and robotics' },
+  { id: 'design', title: 'Design', summary: 'Explore the world of design' },
+  // Añade todos los roadmaps que tengas
+];
+---
+
+<Layout title="About">
+  <main>
+    <h1>ANDRES</h1>
+    <p>Hola caracola</p>
+
+    
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>

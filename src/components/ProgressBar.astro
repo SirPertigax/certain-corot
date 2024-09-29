@@ -1,0 +1,7 @@
+---
+const { progress } = Astro.props;
+---
+<div class="bg-gray-200 rounded-full h-4 w-full mb-4">
+  <div class="bg-yellow-400 h-4 rounded-full" style={`width: ${progress}%`}></div>
+</div>
+<p class="text-sm text-gray-600">{progress}% DONE</p>

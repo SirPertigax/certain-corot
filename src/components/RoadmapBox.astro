@@ -1,0 +1,61 @@
+---
+const { title, id, summary, resources, isMain = false } = Astro.props;
+---
+
+<div 
+  class={`roadmap-box ${isMain ? 'main-box' : ''}`} 
+  data-id={id} 
+  data-title={title} 
+  data-summary={summary} 
+  data-resources={JSON.stringify(resources)}
+>
+  <h3>{title}</h3>
+</div>
+
+<style>
+  .roadmap-box {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .roadmap-box:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
+  }
+  .main-box {
+    background-color: #ffd700;
+    font-weight: bold;
+  }
+  h3 {
+    margin: 0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.roadmap-box').forEach(box => {
+    box.addEventListener('click', () => {
+      const id = box.getAttribute('data-id');
+      const title = box.getAttribute('data-title');
+      const summary = box.getAttribute('data-summary');
+      let resources = [];
+      try {
+        resources = JSON.parse(box.getAttribute('data-resources') || '[]');
+      } catch (e) {
+        console.error('Error parsing resources:', e);
+      }
+      
+      if (id && title && summary) {
+        openModal(id, title, summary, resources);
+      } else {
+        console.warn('Missing data for modal:', { id, title, summary });
+      }
+    });
+  });
+
+  function openModal(id, title, summary, resources) {
+    // Implementa esta función para abrir tu modal y mostrar los detalles
+    console.log('Abriendo modal para:', id, title, summary, resources);
+  }
+</script>

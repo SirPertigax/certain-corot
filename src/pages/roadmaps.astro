@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RoadmapLink from '../components/RoadmapLink.astro';
+import roadmapsData from '../data/roadmaps.json';
+
+const allRoadmaps = roadmapsData.map(roadmap => ({
+  id: roadmap.id,
+  title: roadmap.title,
+  summary: roadmap.description || `Explore the ${roadmap.title} roadmap to learn more.`,
+  faqCount: roadmap.faqs ? roadmap.faqs.length : 0,
+  firstFaq: roadmap.faqs && roadmap.faqs.length > 0 ? roadmap.faqs[0].question : null
+}));
+---
+
+<Layout title="All Roadmaps">
+  <main>
+    <h1>All Roadmaps</h1>
+    <div class="roadmap-grid">
+      {allRoadmaps.map((roadmap) => (
+        <div class="roadmap-card">
+          <RoadmapLink
+            title={roadmap.title}
+            id={roadmap.id}
+            summary={roadmap.summary}
+          />
+          {roadmap.faqCount > 0 && (
+            <div class="faq-preview">
+              <p><strong>FAQs:</strong> {roadmap.faqCount} preguntas respondidas</p>
+              {roadmap.firstFaq && (
+                <p><em>Ejemplo: "{roadmap.firstFaq}"</em></p>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  @media (min-width: 768px) {
+    .roadmap-grid {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+  }
+  .roadmap-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .roadmap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  .faq-preview {
+    background-color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  .faq-preview p {
+    margin: 0.25rem 0;
+  }
+</style>

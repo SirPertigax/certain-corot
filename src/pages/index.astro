@@ -1,16 +1,144 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import RoadmapBox from '../components/RoadmapBox.astro';
+import RoadmapLink from '../components/RoadmapLink.astro';
 
+const allRoadmaps = [
+  { id: 'electronic', title: 'Electronic', summary: 'Learn about electronics and robotics' },
+  { id: 'design', title: 'Design', summary: 'Explore the world of design' },
+  // Añade todos los roadmaps que tengas
+];
+
+const beginnerTips = [
+  {
+    title: "Asigna tiempo a investigar y explorar",
+    content: `
+      <p>En primer lugar, debes dedicar suficiente tiempo a investigar y explorar la tecnología específica que vas a aprender. Debes saber de qué se trata la tecnología, cuáles son sus ventajas y desventajas y, lo más importante, qué beneficios obtendrás al aprender esa tecnología en particular. Una vez que hayas terminado con el proceso de investigación de la tecnología y tengas claros tus objetivos al aprenderla, esto te ayudará a planificar tu proceso de aprendizaje futuro.</p>
+      <p>Además, cuando se realiza una investigación exhaustiva para conocer una tecnología en particular, se desarrolla un interés genuino en usted hacia ella. Una de las mejores formas de conocer en profundidad cualquier nueva tecnología es consultar la documentación oficial y leer los testimonios de los expertos.</p>
+    `
+  },
+  {
+    title: "Identifica qué necesitas para construir algo",
+    content: `
+      <p>Este es el consejo más importante relacionado a dominar una tecnología. Y es que el conocimiento, más aún cuando es aplicado, se sostiene en una mochila que poco a poco vamos llenando.</p>
+      <p>Imagina que quieres hacer un dron autónomo. Seguro que puedes comprarlo en temu, abres la caja y le das al interruptor, ¿pero qué pasa si quieres ser creador y no consumidor? ¿Crees que basta con buenas intenciones y mucho esfuerzo? No, necesitas conocimientos de electricidad, electrónica, mecanismos, diseño 3D, materiales,... Y sin eso, solo darás palos de ciego y terminaras frustándote.</p>
+          <p>¿Significa que tengo que aprender de todo? No, significa que debes planear el camino que te llevará al éxito. Y da igual lo largo que sea, solo se trata de dar un paso tras otro.</p>
+
+      `
+  },
+  {
+    title: "Encuentra los recursos adecuados para el proceso de aprendizaje",
+    content: `
+      <p>Esta página es un pequeño repositorio creado por un profesor que es aprendiz de todo y experto de nada. Pero sí que intenta ser la puerta al conocimiento de otros muchos más sabios</p>
+      <p>Los recursos de baja calidad no solo te hacen mediocre, sino que provocan que el que empieza, pierda el interés por el tema. Y hoy en día lo más complicado en el internet infinito es separar la paja del grano.</p>
+      <p>En la mayoría de items recomiendo herramientas para profundizar en el tema:</p>
+        <li>Cursos en linea</li>
+        <li>Libros recomendados</li>
+        <li>Videos de youtube</li>
+        <li>Artículos</li>
+
+      `
+  },
+  { 
+    title: "No dudes en pedir ayuda", 
+    content: `
+      <p>El proceso de aprendizaje es como una etapa ciclista. Hay momentos en que se pone cuesta arriba, y si conseguimos alcanzar la cima, de repente parece que volamos. Pero siempre habrá otra cuesta empinada más adelante.</p>
+      <p>Sin embargo aquí si que podemos cogernos al pelotón. La tecnología y sus diversos campos dan lugar a entusiastas que están deseando compartir su conocimiento, por lo que no dudes en preguntar. Hay multiples foros, y en los items existe un apartado de preguntas frecuentes. Si no ves la tuya, pregunta, siempre habrá alguien que haya tenido la misma en el pasado. O que la tendrá en el futuro.</p>
+    `
+  },
+  {
+    title: "ASigna tiempo a investigar y explorar",
+    content: `
+      <p>n primer lugar, debes dedicar suficiente tiempo a investigar y explorar la tecnología específica que vas a aprender. Debes saber de qué se trata la tecnología, cuáles son sus ventajas y desventajas y, lo más importante, qué beneficios obtendrás al aprender esa tecnología en particular. Una vez que hayas terminado con el proceso de investigación de la tecnología y tengas claros tus objetivos al aprenderla, esto te ayudará a planificar tu proceso de aprendizaje futuro.</p>
+      <p>Además, cuando se realiza una investigación exhaustiva para conocer una tecnología en particular, se desarrolla un interés genuino en usted hacia ella. Una de las mejores formas de conocer en profundidad cualquier nueva tecnología es consultar la documentación oficial y leer los testimonios de los expertos.</p>
+      <ol>
+        <li>Watch a project-based tutorial, code along with the instructor.</li>
+        <li>After finishing the tutorial, try to build the same project from scratch without the tutorial (if you can't, it's okay to go back to the tutorial).</li>
+        <li>Repeat this process until you can build the project without the tutorial.</li>
+        <li>After that, try to add new features to the project or build something similar from scratch.</li>
+      </ol>
+    `
+  },
+  // ... Añade el resto de los consejos con formato HTML similar
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <main>
+    <h1>TECHPATHS</h1>
+    <p>Elige un camino, todos llevan al éxito</p>
+
+    <section class="roadmap-grid">
+      {allRoadmaps.map(roadmap => (
+        <RoadmapLink id={roadmap.id} title={roadmap.title} summary={roadmap.summary} />
+      ))}
+    </section>
+
+    <section class="tips-section">
+      <h2>Consejos para principiantes</h2>
+      <p>Como empezar con buen pie dentro del mundo de la Tecnología</p>
+      <div class="tips-grid">
+        {beginnerTips.map((tip, index) => (
+          <details class="tip-box">
+            <summary>{tip.title}</summary>
+            <div class="tip-content" set:html={tip.content} />
+          </details>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .tips-section {
+    margin-top: 3rem;
+  }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .tip-box {
+    background-color: #8f8d8d;
+    border-radius: 15px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+  .tip-box summary {
+    font-weight: bold;
+    cursor: pointer;
+    /* margin-bottom: 0.5rem; */
+  }
+  .tip-box[open] {
+    background-color: #e0e0e0;
+  }
+  .tip-content {
+    text-align: justify;
+    margin-top: 0.5rem;
+  }
+  .tip-content p, .tip-content ul, .tip-content ol {
+    
+    margin-bottom: 0.5rem;
+  }
+  .tip-content ul, .tip-content ol {
+    padding-left: 1.5rem;
+  }
+</style>

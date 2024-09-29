@@ -1,0 +1,32 @@
+---
+const { id, title, summary } = Astro.props;
+---
+
+<a href={`/roadmap/${id}`} class="roadmap-link">
+  <h2>{title}</h2>
+  <p>{summary}</p>
+</a>
+
+<style>
+  .roadmap-link {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .roadmap-link:hover {
+    background-color: #dd9818;
+    transform: translateY(-5px);
+  }
+  h3 {
+    margin: 0 0 0.5rem 0;
+  }
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+</style>

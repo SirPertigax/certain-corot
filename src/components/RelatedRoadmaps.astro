@@ -1,0 +1,15 @@
+---
+const { roadmaps } = Astro.props;
+---
+<div class="bg-white p-4 rounded-lg shadow-md mb-4">
+  <h2 class="text-xl font-bold mb-2">Other Related Roadmaps</h2>
+  <ul>
+    {roadmaps.map((roadmap) => (
+      <li class="mb-1">
+        <a href={`/${roadmap.slug}`} class="text-blue-500 hover:underline">
+          {roadmap.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RoadmapBox from '../../components/RoadmapBox.astro';
+import Modal from '../../components/Modal.astro';
+import roadmapsData from '../../data/roadmaps.json';
+
+export function getStaticPaths() {
+  return roadmapsData.map(roadmap => ({
+    params: { roadmapId: roadmap.id },
+    props: { roadmap },
+  }));
+}
+
+const { roadmapId } = Astro.params;
+const { roadmap } = Astro.props;
+
+if (!roadmap) {
+  return Astro.redirect('/404');
+}
+
+const faqs = roadmap.faqs || [];
+---
+
+<Layout title={roadmap.title}>
+  <main>
+    <h1>{roadmap.title}</h1>
+    <p class="roadmap-description">{roadmap.description}</p>
+
+    <div class="roadmap-container">
+      {roadmap.mainTopics.map((topic) => (
+        <div class="roadmap-section">
+          <RoadmapBox
+              title={topic.title}
+              id={topic.id}
+              className="primary-box"
+          />
+          <div class="roadmap-items">
+            {topic.content.map((item) => (
+              <RoadmapBox
+                title={item.title}
+                id={item.id}
+                summary={item.summary}
+                resources={item.resources}
+                className="secondary-box"
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {faqs.length > 0 && (
+      <section class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          {faqs.map((faq, index) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+  <Modal />
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  .roadmap-description {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .roadmap-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .primary-box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+  .roadmap-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+  }
+  @media (min-width: 992px) {
+    .roadmap-items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .secondary-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-weight: normal;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    min-width: 0; /* Permite que las cajas se encojan si es necesario */
+  }
+  .secondary-box:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  .faq-section {
+    margin-top: 3rem;
+  }
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .faq-item {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+  .faq-item summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .faq-item[open] {
+    background-color: #e0e0e0;
+  }
+  .faq-item p {
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+</style>

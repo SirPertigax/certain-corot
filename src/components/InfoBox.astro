@@ -1,0 +1,10 @@
+---
+const { url } = Astro.props;
+---
+<div class="bg-white p-4 rounded-lg shadow-md">
+  <h2 class="text-xl font-bold mb-2">Find the detailed version of this roadmap</h2>
+  <p class="mb-4">along with resources and other roadmaps</p>
+  <a href={url} class="bg-blue-500 text-white px-4 py-2 rounded block text-center">
+    {url}
+  </a>
+</div>
