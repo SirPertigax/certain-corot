@@ -5,30 +5,34 @@ const { title, id, summary, resources, isMain = false } = Astro.props;
 <div 
   class={`roadmap-box ${isMain ? 'main-box' : ''}`} 
   data-id={id} 
-  data-title={title} 
+  data-title={title}
   data-summary={summary} 
   data-resources={JSON.stringify(resources)}
 >
-  <h3>{title}</h3>
+<p>{title}</p>
 </div>
 
 <style>
   .roadmap-box {
     padding: 1rem;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 12px;
+    text-align: center;
+    font-weight: normal;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
   }
   .roadmap-box:hover {
     background-color: #f0f0f0;
     transform: translateY(-5px);
+    font-weight: bold;
   }
   .main-box {
     background-color: #ffd700;
     font-weight: bold;
   }
-  h3 {
+
+  p {
     margin: 0;
   }
 </style>

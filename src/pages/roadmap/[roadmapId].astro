@@ -32,6 +32,7 @@ const faqs = roadmap.faqs || [];
           <RoadmapBox
               title={topic.title}
               id={topic.id}
+              isMain="True"
               className="primary-box"
           />
           <div class="roadmap-items">
@@ -72,7 +73,7 @@ const faqs = roadmap.faqs || [];
     margin: 0 auto;
     padding: 2rem;
   }
-  h1, h2 {
+  h1, h2, h3 {
     text-align: center;
   }
   .roadmap-description {
@@ -89,7 +90,7 @@ const faqs = roadmap.faqs || [];
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    border: 2px solid #e0e0e0;
+    border: 3px solid #e0e0e0;
     border-radius: 12px;
     padding: 2rem;
     width: 100%;
@@ -100,6 +101,7 @@ const faqs = roadmap.faqs || [];
     max-width: 300px;
     margin: 0 auto;
     font-weight: bold;
+    
   }
   .roadmap-items {
     display: grid;
@@ -138,7 +140,7 @@ const faqs = roadmap.faqs || [];
     margin-top: 1rem;
   }
   .faq-item {
-    background-color: #f0f0f0;
+    background-color: #8b8b8b;
     border-radius: 8px;
     padding: 1rem;
     transition: all 0.3s ease;
