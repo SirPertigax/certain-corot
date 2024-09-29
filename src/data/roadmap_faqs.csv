@@ -1,5 +1,5 @@
 faq_id,topic_id,faq_question,faq_answer
-1,101,¿Qué es HTML?,HTML es el lenguaje de marcado estándar para crear páginas web.
+1,101,¿Qué es JOTE?,HTML es el lenguaje de marcado estándar para crear páginas web.
 2,101,¿Necesito un software especial para escribir HTML?,No necesariamente. Puedes usar cualquier editor de texto simple como Notepad o TextEdit.
 3,102,¿Qué es CSS?,CSS (Cascading Style Sheets) es un lenguaje usado para describir la presentación de un documento escrito en HTML o XML.
 4,201,¿Por qué Python es popular en ciencia de datos?,Python es popular en ciencia de datos debido a su simplicidad sintáctica y la gran cantidad de bibliotecas especializadas disponibles como Pandas NumPy y Scikit-learn.

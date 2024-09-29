@@ -1,62 +1,409 @@
 [
   {
     "id": "1",
-    "title": "Desarrollo Web",
-    "description": "Guía para convertirse en desarrollador web",
+    "title": "Electricidad",
+    "description": " Conjunto de fenómenos físico-químicos que ocurren en presencia de corriente electrica",
     "mainTopics": [
       {
         "id": "101",
-        "title": "HTML",
+        "title": "Corriente Continua",
         "content": [
           {
             "id": "1001",
-            "title": "Estructura básica HTML",
-            "summary": "Aprende las etiquetas HTML esenciales",
+            "title": "Conceptos básicos de electricidad",
+            "summary": "La electricidad se basa en la existencia de cargas eléctricas, su movimiento (corriente) y la diferencia de potencial (voltaje). Estos conceptos básicos permiten entender cómo funcionan los circuitos y cómo se transmiten señales a través de ellos. La resistencia, por otro lado, es la oposición al flujo de corriente. Estos tres conceptos son la base de la ingeniería eléctrica y electrónica.",
             "resources": [
               {
-                "title": "MDN Web Docs",
-                "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
+                "title": "Conceptos de Electricidad - Wikipedia",
+                "url": "https://es.wikipedia.org/wiki/Electricidad"
+              },
+              {
+                "title": "Fundamentos de Electricidad - Schneider Electric",
+                "url": "https://www.schneider-electric.es/es/faqs/FA144724/"
               }
-            ]
+            ],
+            "apuntes_content": "",
+            "class_content": ""
           },
           {
             "id": "1002",
-            "title": "Formularios HTML",
-            "summary": "Crea formularios interactivos",
+            "title": "Ley de Ohm",
+            "summary": "La Ley de Ohm establece que la corriente que atraviesa un conductor entre dos puntos es directamente proporcional a la diferencia de potencial entre ellos e inversamente proporcional a la resistencia. Esta relación se expresa como V=IR (Voltaje = Corriente * Resistencia). Es fundamental para analizar cualquier circuito eléctrico y prever su comportamiento bajo diferentes condiciones de carga.",
             "resources": [
               {
-                "title": "W3Schools HTML Forms",
-                "url": "https://www.w3schools.com/html/html_forms.asp"
+                "title": "Ley de Ohm - Erenovable",
+                "url": "https://www.erenovable.com/ley-de-ohm/"
+              },
+              {
+                "title": "Ley de Ohm - Wikipedia",
+                "url": "https://es.wikipedia.org/wiki/Ley_de_Ohm"
               }
-            ]
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1003",
+            "title": "Energía y potencia eléctrica",
+            "summary": "La potencia eléctrica se refiere a la cantidad de energía que se transfiere en un circuito por unidad de tiempo. Se mide en vatios (W) y se puede calcular como el producto de la tensión y la corriente. En los sistemas eléctricos, conocer la potencia es esencial para dimensionar correctamente los componentes del sistema y asegurar su eficiencia y seguridad.",
+            "resources": [
+              {
+                "title": "Potencia Eléctrica - Energía Hoy",
+                "url": "https://energiahoy.com/potencia-electrica/"
+              },
+              {
+                "title": "Energía y Potencia - Profesor en Línea",
+                "url": "https://www.profesorenlinea.cl/fisica/Electricidad_Potencia_Electrica.htm"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1004",
+            "title": "Resistencias",
+            "summary": "Las resistencias son componentes esenciales que limitan el flujo de corriente en un circuito, protegiendo otros componentes de sobrecargas. Existen varios tipos de resistencias, desde fijas hasta variables, y su selección depende del uso específico en el circuito. Las resistencias convierten la energía eléctrica en calor, siendo fundamentales para controlar el comportamiento eléctrico en sistemas tanto domésticos como industriales.",
+            "resources": [
+              {
+                "title": "Resistencias - Erenovable",
+                "url": "https://www.erenovable.com/resistencia-electrica/"
+              },
+              {
+                "title": "Tipos de Resistencias - Ingeniería Eléctrica",
+                "url": "https://www.ingelec.uns.edu.ar/resistencias/"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1005",
+            "title": "Seguridad eléctrica",
+            "summary": "La seguridad eléctrica implica una serie de medidas y precauciones necesarias para evitar accidentes como descargas eléctricas, cortocircuitos e incendios. Es importante conocer cómo manipular correctamente los dispositivos eléctricos, las normativas vigentes y el uso adecuado de herramientas de protección. También incluye la implementación de dispositivos como interruptores diferenciales y fusibles.",
+            "resources": [
+              {
+                "title": "Seguridad Eléctrica - Eroski Consumer",
+                "url": "https://www.consumer.es/bricolaje/seguridad-electrica-en-el-hogar.html"
+              },
+              {
+                "title": "Medidas de Seguridad Eléctrica - Iberdrola",
+                "url": "https://www.iberdrola.com/seguridad-electrica"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1006",
+            "title": "Circuitos en serie y en paralelo",
+            "summary": "Los circuitos en serie y paralelo son las dos configuraciones básicas de conexiones eléctricas. En un circuito en serie, la corriente es la misma a través de todos los componentes, pero el voltaje se divide entre ellos. En un circuito en paralelo, todos los componentes comparten el mismo voltaje, pero la corriente se divide entre las ramas. Ambos tipos tienen aplicaciones prácticas en diferentes sistemas eléctricos, como en la iluminación doméstica.",
+            "resources": [
+              {
+                "title": "Circuitos en Serie y Paralelo - Erenovable",
+                "url": "https://www.erenovable.com/circuito-en-serie-y-en-paralelo/"
+              },
+              {
+                "title": "Circuitos Serie y Paralelo - Monografías",
+                "url": "https://www.monografias.com/trabajos/circuitoserie/circuitoserie.shtml"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1007",
+            "title": "Leyes de Kirchhoff",
+            "summary": "Las Leyes de Kirchhoff son esenciales para analizar circuitos complejos. La primera ley o Ley de Corrientes establece que la suma de las corrientes que entran en un nodo es igual a la suma de las que salen. La segunda ley, o Ley de Tensiones, establece que la suma de las caídas de tensión en un circuito cerrado es igual a la suma de las tensiones suministradas. Son fundamentales para resolver circuitos con múltiples ramas.",
+            "resources": [
+              {
+                "title": "Leyes de Kirchhoff - Fisicalab",
+                "url": "https://www.fisicalab.com/apartado/leyes-kirchhoff"
+              },
+              {
+                "title": "Leyes de Kirchhoff - Wikipedia",
+                "url": "https://es.wikipedia.org/wiki/Leyes_de_Kirchhoff"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1008",
+            "title": "Circuitos combinados",
+            "summary": "Los circuitos combinados mezclan componentes en serie y en paralelo. Este tipo de circuitos se encuentra en muchos sistemas eléctricos, como en la distribución de energía doméstica e industrial. Al combinar ambas configuraciones, se pueden controlar diferentes parámetros de forma más eficiente, como la distribución del voltaje y la corriente entre los dispositivos conectados.",
+            "resources": [
+              {
+                "title": "Circuitos Combinados - Monografías",
+                "url": "https://www.monografias.com/trabajos/circuitocombinado/circuitocombinado.shtml"
+              },
+              {
+                "title": "Circuitos Combinados - Profesor en Línea",
+                "url": "https://www.profesorenlinea.cl/fisica/CircuitoCombinado.htm"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1009",
+            "title": "Medición en circuitos de corriente continua",
+            "summary": "En los circuitos de corriente continua, la medición de magnitudes como la corriente, el voltaje y la resistencia es fundamental para su análisis y diagnóstico. Se utilizan dispositivos como voltímetros, amperímetros y multímetros para obtener estos datos. Una correcta medición permite identificar problemas en el sistema, optimizar el diseño de circuitos y realizar mantenimiento preventivo.",
+            "resources": [
+              {
+                "title": "Medición Eléctrica - Wikipedia",
+                "url": "https://es.wikipedia.org/wiki/Instrumento_de_medici%C3%B3n_el%C3%A9ctrica"
+              },
+              {
+                "title": "Medición en Circuitos Eléctricos - Ecured",
+                "url": "https://www.ecured.cu/Mediciones_el%C3%A9ctricas"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
           }
         ]
       },
       {
         "id": "102",
-        "title": "CSS",
+        "title": "Corriente Alterna",
         "content": [
           {
-            "id": "2001",
-            "title": "Selectores CSS",
-            "summary": "Domina los selectores CSS",
+            "id": "1020",
+            "title": "Teoría Básica de AC",
+            "summary": "La corriente alterna (AC) es un tipo de corriente eléctrica donde la dirección de la corriente cambia periódicamente. Es ampliamente utilizada en sistemas de potencia, ofreciendo ventajas significativas en términos de eficiencia en comparación con la corriente continua (DC).",
             "resources": [
               {
-                "title": "CSS Tricks",
-                "url": "https://css-tricks.com/how-css-selectors-work/"
+                "title": "Electrónica Básica",
+                "url": "https://electronicbasics.com"
+              },
+              {
+                "title": "Circuitos Eléctricos",
+                "url": "https://www.circuitos-electricos.com"
               }
-            ]
+            ],
+            "apuntes_content": "",
+            "class_content": ""
           },
           {
-            "id": "2002",
-            "title": "Flexbox",
-            "summary": "Diseño flexible con Flexbox",
+            "id": "1021",
+            "title": "Números Complejos",
+            "summary": "Los números complejos son fundamentales en el análisis de circuitos AC, permitiendo representar tanto la magnitud como la fase de voltajes y corrientes. Esto simplifica el análisis de circuitos en AC y la resolución de ecuaciones.",
             "resources": [
               {
-                "title": "Flexbox Froggy",
-                "url": "https://flexboxfroggy.com/"
+                "title": "Matemáticas para Ingenieros",
+                "url": "https://www.matematicasingenieros.com"
+              },
+              {
+                "title": "Números Complejos",
+                "url": "https://www.numeroscomplejos.com"
               }
-            ]
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1022",
+            "title": "Reactancia e Impedancia – Inductiva",
+            "summary": "La reactancia inductiva es la oposición que presenta un inductor al paso de la corriente alterna, siendo dependiente de la frecuencia de la señal. La impedancia total en circuitos con inductores es la combinación de resistencia y reactancia.",
+            "resources": [
+              {
+                "title": "Electrónica y Circuitos",
+                "url": "https://www.electronicaycircuitos.com"
+              },
+              {
+                "title": "Inductores y Reactancia",
+                "url": "https://www.inductores.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1023",
+            "title": "Reactancia e Impedancia – Capacitiva",
+            "summary": "La reactancia capacitiva es la oposición que ofrece un capacitor al paso de la corriente alterna, y es inversamente proporcional a la frecuencia. Esto implica que a frecuencias altas, los capacitores permiten más corriente.",
+            "resources": [
+              {
+                "title": "Capacitores y Circuitos",
+                "url": "https://www.capacitores.com"
+              },
+              {
+                "title": "Electrónica para Todos",
+                "url": "https://www.electronicaparatodos.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1024",
+            "title": "Reactancia e Impedancia – R-L-C",
+            "summary": "El análisis de circuitos que involucran resistores, inductores y capacitores es crucial en el diseño de circuitos AC. La combinación de estos elementos forma un sistema que presenta una respuesta única a diferentes frecuencias de señal.",
+            "resources": [
+              {
+                "title": "Circuitos RLC",
+                "url": "https://www.circuitosrlc.com"
+              },
+              {
+                "title": "Resistores, Inductores y Capacitores",
+                "url": "https://www.ricapacitadores.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1025",
+            "title": "Resonancia",
+            "summary": "La resonancia en circuitos AC ocurre cuando la reactancia inductiva y capacitiva se cancelan mutuamente, resultando en una amplificación de la corriente. Este fenómeno se utiliza en diversas aplicaciones, desde radios hasta filtros de audio.",
+            "resources": [
+              {
+                "title": "Resonancia en Circuitos",
+                "url": "https://www.resonancia.com"
+              },
+              {
+                "title": "Teoría de Circuitos AC",
+                "url": "https://www.teoriacircuitos.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1026",
+            "title": "Señales AC de Frecuencia Mixta",
+            "summary": "El análisis de señales AC de frecuencia mixta implica el estudio de componentes de diferentes frecuencias en un circuito, lo que requiere herramientas matemáticas avanzadas para su análisis y comprensión.",
+            "resources": [
+              {
+                "title": "Frecuencias y Señales",
+                "url": "https://www.frecuencias.com"
+              },
+              {
+                "title": "Análisis de Señales AC",
+                "url": "https://www.analisisdeac.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1027",
+            "title": "Filtros",
+            "summary": "Los filtros en circuitos AC se utilizan para permitir el paso de ciertas frecuencias mientras bloquean otras. Son componentes clave en sistemas de audio y telecomunicaciones, mejorando la calidad de las señales.",
+            "resources": [
+              {
+                "title": "Filtros de Frecuencia",
+                "url": "https://www.filtrosdefrecuencia.com"
+              },
+              {
+                "title": "Teoría de Filtros",
+                "url": "https://www.teoriadefiltros.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1028",
+            "title": "Transformadores",
+            "summary": "Los transformadores son dispositivos que permiten cambiar los niveles de voltaje en circuitos de corriente alterna. Utilizan principios de inducción electromagnética para aumentar o disminuir el voltaje, facilitando la transmisión de energía a largas distancias.",
+            "resources": [
+              {
+                "title": "Transformadores de AC",
+                "url": "https://www.transformadores.com"
+              },
+              {
+                "title": "Cómo Funcionan los Transformadores",
+                "url": "https://www.funcionamientotransformadores.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1029",
+            "title": "Circuitos AC Polifásicos",
+            "summary": "Los circuitos polifásicos utilizan múltiples fases para suministrar energía, siendo más eficientes que los circuitos monofásicos. Son comúnmente utilizados en sistemas industriales y en la distribución de energía eléctrica.",
+            "resources": [
+              {
+                "title": "Circuitos Polifásicos",
+                "url": "https://www.circuitospolifasicos.com"
+              },
+              {
+                "title": "Teoría de Circuitos Trifásicos",
+                "url": "https://www.teoriadecircuittesthree.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1030",
+            "title": "Factor de Potencia",
+            "summary": "El factor de potencia es una medida de cuán eficientemente se convierte la corriente en trabajo útil. Es crucial para optimizar el rendimiento en sistemas eléctricos y reducir pérdidas de energía.",
+            "resources": [
+              {
+                "title": "Factor de Potencia",
+                "url": "https://www.factoresdepotencia.com"
+              },
+              {
+                "title": "Eficiencia Energética",
+                "url": "https://www.eficienciaenergetica.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1031",
+            "title": "Circuitos de Medición AC",
+            "summary": "Los circuitos de medición AC se utilizan para monitorizar y evaluar el rendimiento de sistemas eléctricos. Incluyen herramientas como amperímetros y voltímetros diseñados específicamente para medir corriente alterna.",
+            "resources": [
+              {
+                "title": "Medición de Corriente Alterna",
+                "url": "https://www.mediciondeac.com"
+              },
+              {
+                "title": "Instrumentos de Medición Eléctrica",
+                "url": "https://www.instrumentosdemedicion.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1032",
+            "title": "Motores AC",
+            "summary": "Los motores de corriente alterna son esenciales en aplicaciones industriales y domésticas. Funcionan mediante la interacción de campos magnéticos, permitiendo convertir energía eléctrica en energía mecánica de manera eficiente.",
+            "resources": [
+              {
+                "title": "Motores Eléctricos",
+                "url": "https://www.motores-electricos.com"
+              },
+              {
+                "title": "Teoría de Motores AC",
+                "url": "https://www.teoriademotores.com"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
+          },
+          {
+            "id": "1033",
+            "title": "Líneas de Transmisión",
+            "summary": "Las líneas de transmisión son cruciales para el transporte eficiente de energía eléctrica a largas distancias. Utilizan voltajes elevados para reducir las pérdidas de energía durante el transporte.",
+            "resources": [
+              {
+                "title": "Líneas de Transmisión Eléctrica",
+                "url": "https://www.lineastransmision.com"
+              },
+              {
+                "title": "Energía Eléctrica a Distancia",
+                "url": "https://www.energiaelectricadista"
+              }
+            ],
+            "apuntes_content": "",
+            "class_content": ""
           }
         ]
       },
@@ -68,7 +415,7 @@
     ],
     "faqs": [
       {
-        "question": "¿Qué es HTML?",
+        "question": "¿Qué es JOTE?",
         "answer": "HTML es el lenguaje de marcado estándar para crear páginas web."
       },
       {
@@ -89,30 +436,7 @@
       {
         "id": "201",
         "title": "Python",
-        "content": [
-          {
-            "id": "3001",
-            "title": "Introducción a Python",
-            "summary": "Fundamentos de programación en Python",
-            "resources": [
-              {
-                "title": "Python.org",
-                "url": "https://www.python.org/about/gettingstarted/"
-              }
-            ]
-          },
-          {
-            "id": "3002",
-            "title": "Pandas",
-            "summary": "Manipulación de datos con Pandas",
-            "resources": [
-              {
-                "title": "Pandas Documentation",
-                "url": "https://pandas.pydata.org/docs/"
-              }
-            ]
-          }
-        ]
+        "content": []
       },
       {
         "id": "202",

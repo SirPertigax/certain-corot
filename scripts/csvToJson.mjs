@@ -13,9 +13,22 @@ async function readCsvFile(filename) {
     const csvData = await fs.readFile(filePath, 'utf8');
     const parsedData = parse(csvData, { columns: true, skip_empty_lines: true });
     console.log(`Datos leídos de ${filename}:`, parsedData.length, 'filas');
+    console.log('Muestra de datos:', parsedData[0]);
     return parsedData;
   } catch (error) {
     console.error(`Error al leer el archivo ${filename}:`, error);
+    return [];
+  }
+}
+
+function parseResources(resourcesString) {
+  if (!resourcesString || resourcesString.trim() === '') {
+    return [];
+  }
+  try {
+    return JSON.parse(resourcesString);
+  } catch (error) {
+    console.warn(`Error parsing resources: ${error.message}. Returning empty array.`);
     return [];
   }
 }
@@ -53,12 +66,17 @@ export async function convertCsvToJson() {
 
       // Agregar contenidos
       const topicContents = contentData.filter(c => c.topic_id === record.topic_id);
-      topic.content = topicContents.map(c => ({
-        id: c.content_id,
-        title: c.content_title,
-        summary: c.summary,
-        resources: JSON.parse(c.resources)
-      }));
+      topic.content = topicContents.map(c => {
+        console.log('Procesando contenido:', c);
+        return {
+          id: c.content_id,
+          title: c.content_title,
+          summary: c.summary,
+          resources: parseResources(c.resources),
+          apuntes_content: c.apuntes_content || '', // Nuevo campo
+          class_content: c.class_content || ''      // Nuevo campo
+        };
+      });
 
       return acc;
     }, []);

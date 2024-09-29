@@ -1,5 +1,5 @@
 ---
-const { title, id, summary, resources, isMain = false } = Astro.props;
+const { title, id, summary, resources, apuntes_content, class_content, isMain = false } = Astro.props;
 ---
 
 <div 
@@ -8,6 +8,8 @@ const { title, id, summary, resources, isMain = false } = Astro.props;
   data-title={title}
   data-summary={summary} 
   data-resources={JSON.stringify(resources)}
+  data-apuntes={apuntes_content}
+  data-class={class_content}
 >
 <p>{title}</p>
 </div>
@@ -43,6 +45,8 @@ const { title, id, summary, resources, isMain = false } = Astro.props;
       const id = box.getAttribute('data-id');
       const title = box.getAttribute('data-title');
       const summary = box.getAttribute('data-summary');
+      const apuntes = box.getAttribute('data-apuntes');
+      const clase = box.getAttribute('data-class');
       let resources = [];
       try {
         resources = JSON.parse(box.getAttribute('data-resources') || '[]');
@@ -51,15 +55,41 @@ const { title, id, summary, resources, isMain = false } = Astro.props;
       }
       
       if (id && title && summary) {
-        openModal(id, title, summary, resources);
+        openModal(id, title, summary, apuntes, clase, resources);
       } else {
         console.warn('Missing data for modal:', { id, title, summary });
       }
     });
   });
 
-  function openModal(id, title, summary, resources) {
-    // Implementa esta función para abrir tu modal y mostrar los detalles
-    console.log('Abriendo modal para:', id, title, summary, resources);
+  function openModal(id, title, summary, apuntes, clase, resources) {
+    const modal = document.getElementById('modal');
+    if (modal) {
+      const modalTitle = modal.querySelector('#modal-title');
+      const modalSummary = modal.querySelector('#modal-summary');
+      const modalApuntes = modal.querySelector('#modal-apuntes');
+      const modalClase = modal.querySelector('#modal-clase');
+      const resourcesList = modal.querySelector('#modal-resources');
+
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalSummary) modalSummary.textContent = summary;
+      if (modalApuntes) modalApuntes.textContent = apuntes ? `Apuntes: ${apuntes}` : 'Apuntes: En proceso';
+      if (modalClase) modalClase.textContent = clase ? `Clase: ${clase}` : 'Clase: En proceso';
+
+      if (resourcesList) {
+        resourcesList.innerHTML = '';
+        resources.forEach(resource => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = resource.url;
+          a.textContent = resource.title;
+          a.target = '_blank';
+          li.appendChild(a);
+          resourcesList.appendChild(li);
+        });
+      }
+
+      modal.style.display = 'block';
+    }
   }
 </script>
