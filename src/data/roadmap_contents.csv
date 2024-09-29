@@ -1,0 +1,7 @@
+content_id,topic_id,content_title,summary,resources
+1001,101,Estructura básica HTML,Aprende las etiquetas HTML esenciales,"[{""title"":""MDN Web Docs"",""url"":""https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started""}]"
+1002,101,Formularios HTML,Crea formularios interactivos,"[{""title"":""W3Schools HTML Forms"",""url"":""https://www.w3schools.com/html/html_forms.asp""}]"
+2001,102,Selectores CSS,Domina los selectores CSS,"[{""title"":""CSS Tricks"",""url"":""https://css-tricks.com/how-css-selectors-work/""}]"
+2002,102,Flexbox,Diseño flexible con Flexbox,"[{""title"":""Flexbox Froggy"",""url"":""https://flexboxfroggy.com/""}]"
+3001,201,Introducción a Python,Fundamentos de programación en Python,"[{""title"":""Python.org"",""url"":""https://www.python.org/about/gettingstarted/""}]"
+3002,201,Pandas,Manipulación de datos con Pandas,"[{""title"":""Pandas Documentation"",""url"":""https://pandas.pydata.org/docs/""}]"

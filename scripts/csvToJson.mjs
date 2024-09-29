@@ -6,31 +6,29 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+async function readCsvFile(filename) {
+  const filePath = path.join(__dirname, '..', 'src', 'data', filename);
+  try {
+    await fs.access(filePath);
+    const csvData = await fs.readFile(filePath, 'utf8');
+    const parsedData = parse(csvData, { columns: true, skip_empty_lines: true });
+    console.log(`Datos leídos de ${filename}:`, parsedData.length, 'filas');
+    return parsedData;
+  } catch (error) {
+    console.error(`Error al leer el archivo ${filename}:`, error);
+    return [];
+  }
+}
+
 export async function convertCsvToJson() {
   try {
-    const csvPath = path.join(__dirname, '..', 'src', 'data', 'roadmaps.csv');
-    const jsonPath = path.join(__dirname, '..', 'src', 'data', 'roadmaps.json');
+    const mainData = await readCsvFile('roadmaps_main.csv');
+    const contentData = await readCsvFile('roadmap_contents.csv');
+    const faqData = await readCsvFile('roadmap_faqs.csv');
 
-    // Verificar si el archivo CSV existe
-    try {
-      await fs.access(csvPath);
-    } catch (error) {
-      console.error(`El archivo CSV no existe en la ruta: ${csvPath}`);
-      console.error('Asegúrate de que el archivo está en la ubicación correcta.');
-      return;
-    }
+    console.log('Datos de FAQs:', faqData);
 
-    // Leer el archivo CSV
-    const csvData = await fs.readFile(csvPath, 'utf8');
-
-    // Parsear el CSV
-    const records = parse(csvData, {
-      columns: true,
-      skip_empty_lines: true
-    });
-
-    // Convertir los registros a la estructura deseada
-    const roadmaps = records.reduce((acc, record) => {
+    const roadmaps = mainData.reduce((acc, record) => {
       let roadmap = acc.find(r => r.id === record.roadmap_id);
       if (!roadmap) {
         roadmap = {
@@ -53,28 +51,36 @@ export async function convertCsvToJson() {
         roadmap.mainTopics.push(topic);
       }
 
-      topic.content.push({
-        id: record.content_id,
-        title: record.content_title,
-        summary: record.summary,
-        resources: JSON.parse(record.resources)
-      });
-
-      // Añadir FAQ si existe
-      if (record.faq_question && record.faq_answer) {
-        const existingFaq = roadmap.faqs.find(faq => faq.question === record.faq_question);
-        if (!existingFaq) {
-          roadmap.faqs.push({
-            question: record.faq_question,
-            answer: record.faq_answer
-          });
-        }
-      }
+      // Agregar contenidos
+      const topicContents = contentData.filter(c => c.topic_id === record.topic_id);
+      topic.content = topicContents.map(c => ({
+        id: c.content_id,
+        title: c.content_title,
+        summary: c.summary,
+        resources: JSON.parse(c.resources)
+      }));
 
       return acc;
     }, []);
 
-    // Guardar el resultado como JSON
+    // Agregar FAQs a los roadmaps correspondientes
+    faqData.forEach(faq => {
+      console.log('Procesando FAQ:', faq);
+      const roadmap = roadmaps.find(r => r.mainTopics.some(topic => topic.id === faq.topic_id));
+      if (roadmap) {
+        roadmap.faqs.push({
+          question: faq.faq_question,
+          answer: faq.faq_answer
+        });
+        console.log(`FAQ agregada al roadmap ${roadmap.id}`);
+      } else {
+        console.log(`No se encontró roadmap para FAQ con topic_id ${faq.topic_id}`);
+      }
+    });
+
+    console.log('Roadmaps procesados:', roadmaps.map(r => ({id: r.id, faqCount: r.faqs.length})));
+
+    const jsonPath = path.join(__dirname, '..', 'src', 'data', 'roadmaps.json');
     await fs.writeFile(jsonPath, JSON.stringify(roadmaps, null, 2));
 
     console.log(`Conversión completada. El archivo JSON ha sido creado en: ${jsonPath}`);
