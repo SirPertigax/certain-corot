@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const { projectId } = Astro.params;
+---
+
+<Layout title={`Proyecto ${projectId}`}>
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Proyecto {projectId}</h1>
+    <p>Contenido del proyecto (por implementar)</p>
+  </main>
+</Layout>
